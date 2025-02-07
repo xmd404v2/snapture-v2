@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     // if (isConnected && address) {
-      router.push('/login');
+      router.push('/auth/login');
     //}
   });
   return <></>;

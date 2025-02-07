@@ -16,7 +16,7 @@ export function LoginForm({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Optionally, add authentication logic here.
-    router.push("/projects");
+    router.push("/dashboard");
   };
 
   return (
@@ -56,7 +56,7 @@ export function LoginForm({
       </div>
       <div className="text-center text-sm">
         👋 {"\u00A0"}{"\u00A0"}
-        <a href="/signup" className="underline underline-offset-4">
+        <a href="/auth/signup" className="underline underline-offset-4">
           I don´t have a Snapture account{" "}
         </a>
       </div>
