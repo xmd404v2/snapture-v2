@@ -35,7 +35,7 @@ export function LoginForm({
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
           {/* TODO: Add `required` to the input below */}
-          <Input id="email" type="email" placeholder="your@mail.com"/>
+          <Input id="email" type="email" placeholder="your@email.com"/>
         </div>
         <div className="grid gap-2">
           <div className="flex items-center">
@@ -55,7 +55,7 @@ export function LoginForm({
         </Button>
       </div>
       <div className="text-center text-sm">
-        👋 {"\u00A0"} {"\u00A0"}
+        👋 {"\u00A0"}{"\u00A0"}
         <a href="/signup" className="underline underline-offset-4">
           I don´t have a Snapture account{" "}
         </a>

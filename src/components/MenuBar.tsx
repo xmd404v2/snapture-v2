@@ -71,12 +71,13 @@ export function Header() {
               </MenubarTrigger>
               <MenubarContent>
                 <MenubarItem>
-                  Profile<MenubarShortcut>⌘P</MenubarShortcut>
+                  Create New<MenubarShortcut>⌘N</MenubarShortcut>
                 </MenubarItem>
                 <MenubarSeparator />
-                <MenubarItem>Settings<MenubarShortcut>⌘S</MenubarShortcut></MenubarItem>
+                <MenubarItem>Manage Existing<MenubarShortcut>⌘M</MenubarShortcut></MenubarItem>
               </MenubarContent>
             </MenubarMenu>
+            
           </Menubar>
         </nav>
       </div>
