@@ -19,8 +19,11 @@ const Dashboard = () => {
     <>
     <Header />
     <main className="min-h-screen flex items-center justify-center">
-        {/* Grid container: one column on small screens, three columns on laptops/desktops */}
-        <Button>Create New Project</Button>
+        {/* TODO: Remove Line 23 for Lines 24-26 */}
+        <Button>[+] {"\u00A0"} Create New Project</Button>
+        {/* hasProject
+          ? <Dashboard />
+          : <Button>Create New Project</Button>; */}
       </main>
     </>
   );
