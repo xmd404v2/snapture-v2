@@ -9,10 +9,13 @@ const Home = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // if (isConnected && address) {
-      router.push('/auth/login');
-    //}
+  // TODO: Remove lines 13-14 for 15-18
+    router.push('/auth/login')
   });
+    // isConnected && address
+    //   ? router.push('/dashboard')
+    //   : router.push('/auth/login');
+  // }, [isConnected, address, router]);
   return <></>;
 };
 

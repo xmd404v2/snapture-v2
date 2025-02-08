@@ -59,10 +59,10 @@ const MenuBar = () => {
           </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
-              Create New<MenubarShortcut>⌘N</MenubarShortcut>
+              View Profile<MenubarShortcut>⌘P</MenubarShortcut>
             </MenubarItem>
             <MenubarSeparator />
-            <MenubarItem>Manage Existing<MenubarShortcut>⌘M</MenubarShortcut></MenubarItem>
+            <MenubarItem>Settings<MenubarShortcut>⌘S</MenubarShortcut></MenubarItem>
           </MenubarContent>
         </MenubarMenu>
         
