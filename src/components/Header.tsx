@@ -21,7 +21,7 @@ import {
 
 
 import Link from "next/link";
-import { MenuBar } from "./MenuBar";
+import { MenuBar } from "./menu";
 
 export function Header() {
   return (
