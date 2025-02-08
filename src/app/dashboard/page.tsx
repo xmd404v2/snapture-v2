@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { Header } from "@/components/header";
+import { Component as AreaChartCard } from "@/components/charts/area";
+import { Button } from '@/components/ui/button';
 
 const Dashboard = () => {
   const [modal, setModal] = useState(false);
@@ -16,11 +18,9 @@ const Dashboard = () => {
   return (
     <>
     <Header />
-      <main className="container mx-auto p-4">
-        <br />
-        <h1>
-            Dashboard Page
-        </h1>
+    <main className="min-h-screen flex items-center justify-center">
+        {/* Grid container: one column on small screens, three columns on laptops/desktops */}
+        <Button>Create New Project</Button>
       </main>
     </>
   );
