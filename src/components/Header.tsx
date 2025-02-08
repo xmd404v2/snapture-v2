@@ -18,8 +18,6 @@ import {
   AvatarImage 
 } from "@/components/ui/avatar"
 
-
-
 import Link from "next/link";
 import { MenuBar } from "@/components/menu";
 
@@ -27,7 +25,7 @@ export function Header() {
   return (
     <header className="bg-background border-b border-border">
       <div className="container mx-auto flex items-center justify-between px-4">
-        <Link href="/" className="text-2xl font-bold">
+        <Link href="/dashboard" className="text-2xl font-bold">
           <Image
             className="dak:invert"
             src="/snapture_logo.svg"
