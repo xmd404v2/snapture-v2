@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/avatar"
 
 import Link from "next/link";
-import { MenuBar } from "@/components/menu";
+import { MenuBar } from "@/components/Menu";
 
 export function Header() {
   return (

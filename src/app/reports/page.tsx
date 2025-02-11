@@ -1,6 +1,6 @@
 'use client';
 
-import { Header } from '@/components/header';
+import { Header } from '@/components/Header';
 import { useState } from 'react';
 
 const Reports = () => {
