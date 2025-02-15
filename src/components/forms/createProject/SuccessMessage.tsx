@@ -2,7 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { RefreshCcw } from "lucide-react";
 import { Button } from "../../ui/button";
-import successIcon from "../../../../public/snapture_logo.svg";
+import successIcon from "../../../../public/snapture_black.svg";
 
 const successVariants = {
   hidden: {
