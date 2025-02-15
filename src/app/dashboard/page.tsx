@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import CreateNewProject from "@/components/forms/createProject/CreateNewProject";
@@ -8,8 +8,10 @@ import CreateNewProject from "@/components/forms/createProject/CreateNewProject"
 const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleModal = () => setIsModalOpen(prev => !prev);
-
+  const toggleModal = useCallback(() => {
+    setIsModalOpen(prev => !prev);
+  }, []);
+  
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key.toLowerCase() === "n") {

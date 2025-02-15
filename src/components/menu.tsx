@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import {
   Menubar,
   MenubarContent,
@@ -19,7 +19,7 @@ const MenuBar = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleModal = () => setIsModalOpen(prev => !prev);
+  const toggleModal = useCallback(() => setIsModalOpen(prev => !prev), []);
 
   return (
     <>
