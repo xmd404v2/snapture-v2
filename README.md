@@ -1,6 +1,12 @@
 ## Getting Started
 
-First, run the development server:
+Install dependencies after cloning the repo:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
