@@ -1,33 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
-import { Component as AreaChartCard } from "@/components/charts/area";
 import { Button } from "@/components/ui/button";
-import CreateNewProject from "@/components/forms/createProject/CreateNewProject"; // Import the modal form
+import CreateNewProject from "@/components/forms/createProject/CreateNewProject";
 
 const Dashboard = () => {
-  const [modal, setModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleModalOpen = () => {
-    setModal(true);
-  };
+  const toggleModal = () => setIsModalOpen(prev => !prev);
 
-  const handleModalClose = () => {
-    setModal(false);
-  };
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.ctrlKey && event.key.toLowerCase() === "n") {
+        event.preventDefault();
+        toggleModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
 
   return (
     <>
       <Header />
       <main className="min-h-screen flex items-center justify-center">
-        <Button onClick={handleModalOpen}>
+        <Button onClick={toggleModal}>
           [+] {"\u00A0"} Create New Project
         </Button>
       </main>
 
-      {/* Modal Component */}
-      {modal && <CreateNewProject isOpen={modal} onClose={handleModalClose} />}
+      {/* Modal: Create New Project */}
+      {isModalOpen && <CreateNewProject isOpen={isModalOpen} onClose={toggleModal} />}
     </>
   );
 };

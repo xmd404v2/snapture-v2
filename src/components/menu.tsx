@@ -1,5 +1,7 @@
 "use client";
-import Image from "next/image";
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import {
   Menubar,
   MenubarContent,
@@ -10,65 +12,73 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import CreateNewProject from "./forms/createProject/CreateNewProject";
 
 const MenuBar = () => {
-  const router = useRouter(); // Move useRouter inside the component
+  const router = useRouter();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => setIsModalOpen(prev => !prev);
 
   return (
-    <nav>
-      <Menubar>
-        <MenubarMenu>
-          <MenubarTrigger>Projects</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              Create New<MenubarShortcut>⌘N</MenubarShortcut>
-            </MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>
-              Manage Existing<MenubarShortcut>⌘M</MenubarShortcut>
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger>Reports</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              View All<MenubarShortcut>⌘R</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              Analyze Tool<MenubarShortcut>⌘A</MenubarShortcut>
-            </MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Share</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Print</MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
-        {"\u00A0"}
-        <MenubarMenu>
-          <MenubarTrigger>
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              View Profile<MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              Settings<MenubarShortcut>⌘S</MenubarShortcut>
-            </MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem onClick={() => router.push("/auth/login")}>
-              Logout
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
-      </Menubar>
-    </nav>
+    <>
+      <nav>
+        <Menubar>
+          <MenubarMenu>
+            <MenubarTrigger>Projects</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem onClick={toggleModal}>
+                Create New<MenubarShortcut>Ctrl + N</MenubarShortcut>
+              </MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>
+                Manage Existing<MenubarShortcut>Ctrl + M</MenubarShortcut>
+              </MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>Reports</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                View All<MenubarShortcut>Ctrl + R</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>
+                Analyze Tool<MenubarShortcut>Ctrl + A</MenubarShortcut>
+              </MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Share</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Print</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          {"\u00A0"}
+          <MenubarMenu>
+            <MenubarTrigger>
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                View Profile<MenubarShortcut>Ctrl + P</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>
+                Settings<MenubarShortcut>Ctrl + S</MenubarShortcut>
+              </MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem onClick={() => router.push("/auth/login")}>
+                Logout
+              </MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
+      </nav>
+
+      {/* Modal: Create New Project */}
+      {isModalOpen && <CreateNewProject isOpen={isModalOpen} onClose={toggleModal} />}
+    </>
   );
 };
 
