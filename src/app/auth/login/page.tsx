@@ -10,8 +10,8 @@ export default function LoginPage() {
         <div className="flex justify-center gap-2">
           <a href="#" className="flex items-center gap-2 font-medium">
             <Image
-                className="dak:invert"
-                src="/snapture_logo.svg"
+                className="light:invert"
+                src="/snapture_black.svg"
                 alt="Next.js logo"
                 width={124}
                 height={38}

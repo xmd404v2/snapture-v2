@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import FormWrapper from "./FormWrapper";
 import { FormItems } from "@/components/forms/createProject/CreateNewProject";
-import arcadeImg from "../../../../public/snapture_logo.svg";
-import advancedImg from "../../../../public/snapture_logo.svg";
-import proImg from "../../../../public/snapture_logo.svg";
+import arcadeImg from "../../../../public/snapture_black.svg";
+import advancedImg from "../../../../public/snapture_black.svg";
+import proImg from "../../../../public/snapture_black.svg";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;

@@ -11,7 +11,7 @@ export default function SignUpPage() {
           <a href="#" className="flex items-center gap-2 font-medium">
             <Image
                 className="dak:invert"
-                src="/snapture_logo.svg"
+                src="/snapture_black.svg"
                 alt="Next.js logo"
                 width={124}
                 height={38}
